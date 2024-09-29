@@ -2007,6 +2007,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@maniac-tech/react-native-expo-read-sms@npm:^8.0.2-alpha":
+  version: 8.0.2-alpha
+  resolution: "@maniac-tech/react-native-expo-read-sms@npm:8.0.2-alpha"
+  peerDependencies:
+    react-native: 0.74.3
+  checksum: 1e5cdc6d8d8bb8a96557b3f6b6a5a3cb357a7228e0eacf9000909a7df85f44824ff602441e0e89a704c39aab507f26667ef7cdb2b69392daa85c9fd17fe07256
+  languageName: node
+  linkType: hard
+
 "@nicolo-ribaudo/eslint-scope-5-internals@npm:5.1.1-v1":
   version: 5.1.1-v1
   resolution: "@nicolo-ribaudo/eslint-scope-5-internals@npm:5.1.1-v1"
@@ -5242,6 +5251,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"i@npm:^0.3.7":
+  version: 0.3.7
+  resolution: "i@npm:0.3.7"
+  checksum: 97db09a9377223511bbc416f22e24ee7b90417b0a384710756b2ab74e6cbd95a93ff5856c4bdd8d12d9a74e2460fcbf895f0c2525b6ab2f7898795cb5a5743cf
+  languageName: node
+  linkType: hard
+
 "iconv-lite@npm:^0.6.2":
   version: 0.6.3
   resolution: "iconv-lite@npm:0.6.3"
@@ -7787,6 +7803,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-get-sms-android@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "react-native-get-sms-android@npm:2.1.0"
+  peerDependencies:
+    react-native: "*"
+  checksum: d74653e0ecac1f391d84305e1f4f56140e2042f7f3a5bb19a5cbf0ba2c77fee605c1b7b8636755390fb53b5c0ca8d50c41c8a7dd643d689e4a08540673608141
+  languageName: node
+  linkType: hard
+
+"react-native-safe-area-context@npm:^4.11.0":
+  version: 4.11.0
+  resolution: "react-native-safe-area-context@npm:4.11.0"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 6d6af265ecf1b9cb45e042a335f2c5da472ad41eb5d4fda8e31a1607b344726f0f4f9501ef3a3a731cec3784ba93485b44cbdafbf5f13055caa130c703bbd307
+  languageName: node
+  linkType: hard
+
 "react-native@npm:0.75.3":
   version: 0.75.3
   resolution: "react-native@npm:0.75.3"
@@ -8896,6 +8931,7 @@ __metadata:
     "@babel/core": ^7.20.0
     "@babel/preset-env": ^7.20.0
     "@babel/runtime": ^7.20.0
+    "@maniac-tech/react-native-expo-read-sms": ^8.0.2-alpha
     "@react-native/babel-preset": 0.75.3
     "@react-native/eslint-config": 0.75.3
     "@react-native/metro-config": 0.75.3
@@ -8904,10 +8940,13 @@ __metadata:
     "@types/react-test-renderer": ^18.0.0
     babel-jest: ^29.6.3
     eslint: ^8.19.0
+    i: ^0.3.7
     jest: ^29.6.3
     prettier: 2.8.8
     react: 18.3.1
     react-native: 0.75.3
+    react-native-get-sms-android: ^2.1.0
+    react-native-safe-area-context: ^4.11.0
     react-test-renderer: 18.3.1
     typescript: 5.0.4
   languageName: unknown

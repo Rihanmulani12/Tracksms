@@ -10,8 +10,12 @@
     "test": "jest"
   },
   "dependencies": {
+    "@maniac-tech/react-native-expo-read-sms": "^8.0.2-alpha",
+    "i": "^0.3.7",
     "react": "18.3.1",
-    "react-native": "0.75.3"
+    "react-native": "0.75.3",
+    "react-native-get-sms-android": "^2.1.0",
+    "react-native-safe-area-context": "^4.11.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

@@ -80,8 +80,10 @@ android {
     namespace "com.track"
     defaultConfig {
         applicationId "com.track"
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        
+        minSdkVersion 34
+        targetSdkVersion 34
+    
         versionCode 1
         versionName "1.0"
     }

@@ -1,117 +1,59 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import React, { useState } from 'react';
+import { View, StyleSheet, Text } from 'react-native';
+import { MessageList } from './components/MessageList';
+import { ToggleButton } from './components/ToggleButton';
+import { useSMSFetcher } from './hooks/useSMSFetcher';
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+const App = () => {
+  const [showAllMessages, setShowAllMessages] = useState<boolean>(false);
+  const [showBankMessages, setShowBankMessages] = useState<boolean>(false);
+  const [showAmountMessages, setShowAmountMessages] = useState<boolean>(false);
+  const [showGroceryMessages, setShowGroceryMessages] = useState<boolean>(false);
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+  const { messages, bankMessages, amountMessages, groceryMessages } = useSMSFetcher();
 
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+    <View style={styles.container}>
+      <ToggleButton
+        title={showAllMessages ? 'Hide All SMS' : 'View All SMS'}
+        onPress={() => setShowAllMessages(!showAllMessages)}
+      />
+      {showAllMessages && <MessageList messages={messages} />}
+
+      <Text style={styles.title}>Bank Messages</Text>
+      <ToggleButton
+        title={showBankMessages ? 'Hide Bank Expenses' : 'View All Bank Expenses'}
+        onPress={() => setShowBankMessages(!showBankMessages)}
+      />
+      {showBankMessages && <MessageList messages={bankMessages} />}
+
+      <Text style={styles.title}>Messages Containing 500 Rupees</Text>
+      <ToggleButton
+        title={showAmountMessages ? 'Hide Amount Messages' : 'View Amount Messages'}
+        onPress={() => setShowAmountMessages(!showAmountMessages)}
+      />
+      {showAmountMessages && <MessageList messages={amountMessages} />}
+
+      <Text style={styles.title}>Grocery Messages</Text>
+      <ToggleButton
+        title={showGroceryMessages ? 'Hide Groceries' : 'View All Groceries'}
+        onPress={() => setShowGroceryMessages(!showGroceryMessages)}
+      />
+      {showGroceryMessages && <MessageList messages={groceryMessages} />}
     </View>
   );
-}
-
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-}
+};
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  container: {
+    flex: 1,
+    padding: 20,
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
+  title: {
     fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
+    fontWeight: 'bold',
+    marginVertical: 10,
   },
 });
 
