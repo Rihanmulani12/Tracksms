@@ -18,7 +18,8 @@ declare module 'react-native-get-sms-android' {
         success: (count: number, smsList: string) => void,
       ): void;
   
-      // Add more methods as needed
+     
     };
+    
   }
   

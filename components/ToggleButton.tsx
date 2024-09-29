@@ -2,8 +2,8 @@ import React from 'react';
 import { Button, View } from 'react-native';
 
 interface ToggleButtonProps {
-  title: string; // Title for the button
-  onPress: () => void; // Function to call when button is pressed
+  title: string; 
+  onPress: () => void; 
 }
 
 export const ToggleButton: React.FC<ToggleButtonProps> = ({ title, onPress }) => {

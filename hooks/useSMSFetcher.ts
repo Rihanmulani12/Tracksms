@@ -1,13 +1,12 @@
-// hooks/useSMSFetcher.ts
+
 import { useState, useEffect } from 'react';
 import SmsAndroid from 'react-native-get-sms-android';
 
-// Define and export the SmsMessage interface
 export interface SmsMessage {
   id: string;
   address: string;
   body: string;
-  date: number; // Use appropriate type for date if necessary
+  date: number; 
 }
 
 export const useSMSFetcher = () => {
